@@ -15,15 +15,16 @@ const GameScreen = () => {
       blue: require('../assets/game_assets/blue_balloon.png'),
       green: require('../assets/game_assets/green_balloon.png'),
       yellow: require('../assets/game_assets/yellow_balloon.png'),
+      pink: require('../assets/game_assets/pink_balloon.png'),
     }
 
   return (
     <View className="bg-gray-700 flex-1 relative">
-        <Score
-            number={309}
-        />
+      <Score
+          number={309}
+      />
       <Balloon
-        color={images.green}
+        color={images.blue}
       />
     </View>
   )
