@@ -25,8 +25,8 @@ const Balloon = ({
   useEffect(() => {
     Animated.timing(bottomValue,
       {
-        toValue:-200,
-        duration:randomNumbFromInterval(5500,8500),
+        toValue:-700,
+        duration:randomNumbFromInterval(11000,18000),
         useNativeDriver: true,
         easing:Easing.linear
       }).start(() => setCanShow(false))
