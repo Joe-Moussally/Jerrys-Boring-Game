@@ -1,13 +1,22 @@
 import { View, Text } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 
 //components export
 import Balloon from '../components/game_components/Balloon'
+import Score from '../components/game_components/Score'
 
 const GameScreen = () => {
+
+    const [score,setScore] = useState(0)
+
   return (
     <View className="bg-gray-700 flex-1 relative">
-      <Balloon />
+        <Score
+            number={309}
+        />
+      <Balloon
+        color='red'
+      />
     </View>
   )
 }
