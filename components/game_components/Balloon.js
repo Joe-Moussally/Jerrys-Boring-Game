@@ -5,12 +5,12 @@ const Balloon = () => {
 
   return (
     <TouchableWithoutFeedback
-     onPress={() => Alert.alert('ALL')}
+     onPress={() => Alert.alert('Popped')}
     >
       <Image
-      style={{resizeMode:'contain',width:Dimensions.get('window').width/4}}
-        className={`absolute`}
-        source={require('../../assets/game_assets/balloon.png')}
+        style={{resizeMode:'contain',width:Dimensions.get('window').width/4, height:Dimensions.get('window').width/4}}
+        className={`absolute m-0 p-0`}
+        source={require('../../assets/game_assets/red_balloon.png')}
       />
     </TouchableWithoutFeedback>
   )
