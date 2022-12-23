@@ -1,21 +1,22 @@
 import { View, Text, Image, TouchableWithoutFeedback, Alert, Dimensions, Animated, Easing } from 'react-native'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 const Balloon = ({
     color
 }) => {
 
-  const bottomValue = useRef(new Animated.Value(Dimensions.get('window').height-200)).current  // Initial value for bottom: 0
+  const [canShow,setCanShow] = useState(true)
+
+  const bottomValue = useRef(new Animated.Value(Dimensions.get('window').height)).current  // Initial value for bottom: 0
 
   useEffect(() => {
     Animated.timing(bottomValue,
       {
         toValue:0,
-        duration:10000,
+        duration:6000,
         useNativeDriver: true,
         easing:Easing.linear
-      }).start()
-      
+      }).start(() => setCanShow(false))
   },[bottomValue])
 
 
@@ -24,7 +25,7 @@ const Balloon = ({
     console.log(color)
   }
 
-  return (
+  canShow?
     <Animated.View
       className='border-2 border-red-500'
       style={{transform:[{translateY:bottomValue}]}}
@@ -38,8 +39,7 @@ const Balloon = ({
         source={color}
       />
     </TouchableWithoutFeedback>
-    </Animated.View>
-  )
+    </Animated.View>:null
 }
 
 export default Balloon
