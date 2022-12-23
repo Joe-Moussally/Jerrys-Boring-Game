@@ -5,6 +5,10 @@ const Balloon = ({
     color,
 }) => {
 
+  function randomNumbFromInterval(min, max) { 
+    return Math.random() * (max - min + 1) + min
+  }
+
   const images = [
     require('../../assets/game_assets/red_balloon.png'),
     require('../../assets/game_assets/green_balloon.png'),
@@ -22,7 +26,7 @@ const Balloon = ({
     Animated.timing(bottomValue,
       {
         toValue:-200,
-        duration:Math.floor(Math.random() * (9000 - 5000 + 1) + 5000),
+        duration:randomNumbFromInterval(5500,8500),
         useNativeDriver: true,
         easing:Easing.linear
       }).start(() => setCanShow(false))
@@ -39,7 +43,7 @@ const Balloon = ({
   return (
     <Animated.View
       className='border-2 border-red-500 ml-10'
-      style={{transform:[{translateY:bottomValue}],marginLeft:Dimensions.get('window').width-(Math.floor(Math.random() * (Dimensions.get('window').width-Dimensions.get('window').width/3 - 0 + 1)))}}
+      style={{transform:[{translateY:bottomValue}],marginLeft:randomNumbFromInterval(0,Dimensions.get('window').width-Dimensions.get('window').width/4)}}
     >
     <TouchableWithoutFeedback
      onPress={handlePop}

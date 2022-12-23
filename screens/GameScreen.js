@@ -14,7 +14,12 @@ const GameScreen = () => {
       <Score
           number={309}
       />
-      <Balloon />
+<Balloon />
+<Balloon />
+<Balloon />
+<Balloon />
+<Balloon />
+
     </View>
   )
 }
