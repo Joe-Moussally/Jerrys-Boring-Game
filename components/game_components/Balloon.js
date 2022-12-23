@@ -12,7 +12,7 @@ const Balloon = ({
       {
         toValue:0,
         duration:10000,
-        useNativeDriver: false,
+        useNativeDriver: true,
         easing:Easing.linear
       }).start()
       
@@ -27,7 +27,7 @@ const Balloon = ({
   return (
     <Animated.View
       className='border-2 border-red-500'
-      style={{top:bottomValue,transform:[{translateY:bottomValue}]}}
+      style={{transform:[{translateY:bottomValue}]}}
     >
     <TouchableWithoutFeedback
      onPress={handlePop}
