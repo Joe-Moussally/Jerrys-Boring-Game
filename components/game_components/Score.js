@@ -5,7 +5,7 @@ const Score = ({
     number
 }) => {
   return (
-    <View className="w-fit absolute right-0 flex-row items-center justify-center">
+    <View className="w-fit absolute right-0 top-0 m-2 flex-row items-center justify-center">
         <Text
             className="text-white text-4xl font-bold pt-1 mx-2"
             style={{

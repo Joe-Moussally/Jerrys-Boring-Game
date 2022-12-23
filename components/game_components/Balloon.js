@@ -2,19 +2,23 @@ import { View, Text, Image, TouchableWithoutFeedback, Alert, Dimensions } from '
 import React from 'react'
 
 const Balloon = ({
-    // color='red'
+    color
 }) => {
 
-    color='red'
+
+  //function that handles increasing the score by one
+  const handlePop = () => {
+    console.log(color)
+  }
 
   return (
     <TouchableWithoutFeedback
-     onPress={() => Alert.alert('Popped')}
+     onPress={handlePop}
     >
       <Image
         style={{resizeMode:'contain',width:Dimensions.get('window').width/4, height:Dimensions.get('window').width/4}}
         className={`absolute m-0 p-0`}
-        source={require(`../../assets/game_assets/red_balloon.png`)}
+        source={color}
       />
     </TouchableWithoutFeedback>
   )
