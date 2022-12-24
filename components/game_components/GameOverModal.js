@@ -30,7 +30,7 @@ const GameOverModal = () => {
           <Text
             style={{
               fontFamily:'comic',
-              fontSize:40,
+              fontSize:30,
               marginTop:10,
               color:'white',
               textShadowColor:'#2E00000',
@@ -39,7 +39,7 @@ const GameOverModal = () => {
           >BALLOONS POPPED</Text>
 
           {/* score container*/}
-          <View className="flex-row items-center -translate-y-4">
+          <View className="flex-row items-center -translate-y-7">
               <Image
                 source={require('../../assets/game_assets/balloon_score_icon.png')}
                 style={{
@@ -62,7 +62,39 @@ const GameOverModal = () => {
         </View>
 
         {/* Time */}
-        <View>
+        <View className="flex-column items-center -mt-10">
+          <Text
+            style={{
+              fontFamily:'comic',
+              fontSize:30,
+              marginTop:10,
+              color:'white',
+              textShadowColor:'#2E00000',
+              textShadowRadius:10,
+            }}
+          >TIME</Text>
+
+          {/* score container*/}
+          <View className="flex-row items-center -translate-y-7">
+            <Image
+              source={require('../../assets/game_assets/clock.png')}
+              style={{
+                resizeMode:'contain',
+                width:40,
+                marginHorizontal:10
+              }}
+            />
+            <Text
+              style={{
+                fontFamily:'comic',
+                fontSize:35,
+                textShadowColor:'#fff',
+                textShadowRadius:3,
+                color:'black',
+                paddingTop:6
+              }}
+            >0:13:22</Text>
+          </View>
 
         </View>
 
