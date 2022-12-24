@@ -5,6 +5,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import Balloon from '../components/game_components/Balloon'
 import Score from '../components/game_components/Score'
 import Timer from '../components/game_components/Timer'
+import GameOverModal from '../components/game_components/GameOverModal'
+
+//redux imports
 import { useSelector } from 'react-redux'
 
 const GameScreen = () => {
@@ -35,11 +38,14 @@ const GameScreen = () => {
     }
     id = id + 1
     //10% chance for death balloon to appear
-    if(Math.random() < 0.074) {
-      setBalloonsArray(prev => [...prev,<Balloon id={id} key={id} deathBalloon={true}/>])
+    let isDeathBalloon
+    if(Math.random() < 0.04) {
+      isDeathBalloon = true
     } else {
-      setBalloonsArray(prev => [...prev,<Balloon id={id} key={id} deathBalloon={false}/>])
+      isDeathBalloon = false      
     }
+
+    setBalloonsArray(prev => [...prev,<Balloon id={id} key={id} deathBalloon={isDeathBalloon}/>])
     
     setTimeout(showBalloon,balloonInterval)
   }
@@ -64,6 +70,9 @@ const GameScreen = () => {
       {
         balloonsArray.map(balloon => balloon)
       }
+
+      
+      <GameOverModal />
 
     </View>
   )

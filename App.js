@@ -10,50 +10,21 @@ import { Provider } from 'react-redux';
 import * as SQLite from "expo-sqlite";
 import { useEffect, useState } from 'react';
 
+// expo font
+import * as expoFont from 'expo-font'
 
 
 //defining the local DB
 const db = SQLite.openDatabase("main.db")
 
-// //function to create table if it doesn't exist
-// const createTable = () => {
-//   db.transaction(tx => {
-//     tx.executeSql(
-//       "CREATE TABLE IF NOT EXIST"
-//       +"user"
-//       +"(name TEXT, balloons INTEGER)"
-//     )
-//   })
-// }
 
-// //function to set data to db
-// const setData = () => {
-//   db.transaction(tx => {
-//     tx.executeSql(
-//       "INSERT INTO user (name, balloons) VALUES ('Joe', 2000)"
-//     )
-//   })
-// }
-
-// const getData = () => {
-//   db.transaction(tx => {
-//     tx.executeSql(
-//       "SELECT name, balloons FROM user",
-//       [],
-//       (tx,result) => {
-//         console.log(result.rows)
-//         var len = result.rows.length
-//         if(len > 0) {
-//           console.log(result)
-//           var name = result.rows.item[0].name
-//           var balloons = result.rows.item[0].balloons
-//         }
-//       }
-//     )
-//   })
-// }
 
 export default function App() {
+
+  //font
+  const [fontsLoaded] = expoFont.useFonts({
+    'comic':require('./assets/fonts/comic.ttf')
+  })
 
   const [isLoading,setIsLoading] = useState(true)
 
@@ -77,6 +48,8 @@ export default function App() {
       })
     })
   },[])
+
+  if(!fontsLoaded) return null
 
   return (
     <Provider store={store}>

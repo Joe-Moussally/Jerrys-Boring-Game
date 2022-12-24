@@ -20,7 +20,8 @@
     "react-redux": "^8.0.5",
     "expo-sqlite": "~11.0.0",
     "expo-file-system": "~15.1.1",
-    "expo-asset": "~8.7.0"
+    "expo-asset": "~8.7.0",
+    "expo-font": "~11.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
