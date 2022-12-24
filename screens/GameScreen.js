@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native'
 import React, { useEffect, useRef, useState } from 'react'
 
-//components export
+//components imports
 import Balloon from '../components/game_components/Balloon'
 import Score from '../components/game_components/Score'
-import BalloonGenerator from '../components/game_components/BalloonGenerator'
+import Timer from '../components/game_components/Timer'
 
 const GameScreen = () => {
 
@@ -12,7 +12,7 @@ const GameScreen = () => {
 
   const [score,setScore] = useState(0)
 
-  const [balloonsArray,setBalloonsArray] = useState([<Balloon id={id} key={id}/>])
+  const [balloonsArray,setBalloonsArray] = useState([<Balloon id={id} key={id} setScore={setScore}/>])
 
   useEffect(() => {
     setInterval(() => {
@@ -23,12 +23,19 @@ const GameScreen = () => {
 
   return (
     <View className="bg-gray-700 flex-1 relative">
-      <Score
-          number={score}
-      />
+
+      {/* top game screen container */}
+      <View className="flex-row justify-between p-1 items-center h-[60px]">
+        <Timer />
+        <Score
+            number={score}
+        />
+      </View>
+
       {
         balloonsArray.map(element => element)
       }
+
     </View>
   )
 }

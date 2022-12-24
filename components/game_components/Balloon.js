@@ -54,7 +54,7 @@ const Balloon = ({
 
   //function that handles increasing the score by one
   const handlePop = () => {
-    // setScore(score => score+1) //increase score
+    setScore(score => score+1) //increase score
     playPopSound() //play a random audio pop sound
   }
 
@@ -70,7 +70,7 @@ const Balloon = ({
     >
       <Image
         style={{resizeMode:'contain',width:Dimensions.get('window').width/3.2, height:Dimensions.get('window').width/3.2}}
-        className={`m-0 p-0 border-500-blue border-2`}
+        className={`m-0 p-0`}
         source={images[Math.floor(Math.random() * images.length)]}
       />
     </TouchableWithoutFeedback>
