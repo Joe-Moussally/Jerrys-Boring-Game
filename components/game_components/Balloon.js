@@ -63,13 +63,13 @@ const Balloon = ({
   return (
     <Animated.View
       className='ml-10 absolute'
-      style={{transform:[{translateY:bottomValue}],marginLeft:randomNumbFromInterval(0,Dimensions.get('window').width-Dimensions.get('window').width/4)}}
+      style={{transform:[{translateY:bottomValue}],marginLeft:randomNumbFromInterval(0,Dimensions.get('window').width-Dimensions.get('window').width/3.4)}}
     >
     <TouchableWithoutFeedback
      onPress={handlePop}
     >
       <Image
-        style={{resizeMode:'contain',width:Dimensions.get('window').width/4, height:Dimensions.get('window').width/4}}
+        style={{resizeMode:'contain',width:Dimensions.get('window').width/3.2, height:Dimensions.get('window').width/3.2}}
         className={`m-0 p-0 border-500-blue border-2`}
         source={images[Math.floor(Math.random() * images.length)]}
       />
