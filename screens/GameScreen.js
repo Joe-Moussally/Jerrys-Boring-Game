@@ -18,18 +18,11 @@ const GameScreen = () => {
   const score = useSelector(state => state.score.value)
 
   useEffect(() => {
-
     //balloons generator timer
     setInterval(() => {
       id = id + 1
       setBalloonsArray(prev => [...prev,<Balloon id={id} key={id}/>])
     },2000)
-
-    //timer bar
-    //decrease timer bar width with time
-    setInterval(() => {
-        setProgressWidth(prev => prev.split('%')[0] - .75 +'%')
-    },1600)
   },[])
 
   return (

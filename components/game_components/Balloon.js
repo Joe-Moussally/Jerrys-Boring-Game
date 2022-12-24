@@ -14,11 +14,12 @@ const Balloon = () => {
   //pop audios paths object
   let popAudios = {
     1:require("../../assets/game_assets/pop_audio_1.mp3"),
-    2:require("../../assets/game_assets/pop_audio_2.mp3")
+    2:require("../../assets/game_assets/pop_audio_2.mp3"),
+    3:require("../../assets/game_assets/pop_audio_3.mp3"),
   }
 
   const playPopSound = async () => {
-    let audioNumber = Math.floor(Math.random() * (2 - 1 + 1) + 1)
+    let audioNumber = Math.floor(Math.random() * (3 - 1 + 1) + 1)
 
     const {sound} = await Audio.Sound.createAsync(popAudios[audioNumber])
     sound.playAsync()
