@@ -5,7 +5,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import Balloon from '../components/game_components/Balloon'
 import Score from '../components/game_components/Score'
 import Timer from '../components/game_components/Timer'
-import GameOverModal from '../components/game_components/GameOverModal'
+import GameOverModal from '../components/navigation_components/GameOverModal'
 
 //redux imports
 import { useSelector } from 'react-redux'

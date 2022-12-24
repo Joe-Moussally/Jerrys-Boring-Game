@@ -1,5 +1,6 @@
 import { View, Text, Image } from 'react-native'
 import React from 'react'
+import Button from './Button'
 
 const GameOverModal = () => {
   return (
@@ -97,6 +98,12 @@ const GameOverModal = () => {
           </View>
 
         </View>
+
+        {/* RETRY BUTTON */}
+        <Button
+          text="RETRY"
+          onPress={() => console.log("PRESSED")}
+        />
 
       </View>
     </View>
