@@ -3,8 +3,14 @@ import React, { useEffect, useRef, useState } from 'react'
 
 const Balloon = ({
   id,
+  setScore
 }) => {
 
+  const playPopSound = () => {
+    
+  }
+
+  //function to get random values for the balloon
   function randomNumbFromInterval(min, max) { 
     return Math.random() * (max - min + 1) + min
   }
@@ -35,7 +41,8 @@ const Balloon = ({
 
   //function that handles increasing the score by one
   const handlePop = () => {
-    console.log(id)
+    setScore(score => score+1) //increase score
+    playPopSound() //play a random audio pop sound
   }
 
   if(!canShow) return null

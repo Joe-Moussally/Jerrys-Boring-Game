@@ -17,7 +17,7 @@ const GameScreen = () => {
   useEffect(() => {
     setInterval(() => {
       id = id + 1
-      setBalloonsArray(prev => [...prev,<Balloon id={id} key={id}/>])
+      setBalloonsArray(prev => [...prev,<Balloon id={id} key={id} setScore={setScore}/>])
     },2000)
   },[])
 
@@ -26,13 +26,8 @@ const GameScreen = () => {
       <Score
           number={score}
       />
-      {/* <BalloonGenerator /> */}
-
-      {/* <Balloon /> */}
       {
-        balloonsArray.map(element => {
-          return element          
-        })
+        balloonsArray.map(element => element)
       }
     </View>
   )
