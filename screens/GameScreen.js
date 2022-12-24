@@ -17,12 +17,29 @@ const GameScreen = () => {
 
   const score = useSelector(state => state.score.value)
 
+  //interval variable to be set pseudo-randomly for the set interval
+  let balloonInterval = 2000
+
+  //function to get random values for the balloon
+  function randomIntFromInterval(min, max) { 
+    return Math.floor(Math.random() * (max - min + 1) + min)
+  }
+
+  //function to be called repeatedly for dynamic timers
+  const showBalloon = () => {
+    balloonInterval = randomIntFromInterval(800,1900)
+    
+    //set higher change for lower intervals
+    if(balloonInterval>1500) {
+      balloonInterval = randomIntFromInterval(1100,1900)
+    }
+    id = id + 1
+    setBalloonsArray(prev => [...prev,<Balloon id={id} key={id}/>])
+    setTimeout(showBalloon,balloonInterval)
+  }
+
   useEffect(() => {
-    //balloons generator timer
-    setInterval(() => {
-      id = id + 1
-      setBalloonsArray(prev => [...prev,<Balloon id={id} key={id}/>])
-    },2000)
+    setTimeout(showBalloon,balloonInterval)
   },[])
 
   return (
@@ -39,7 +56,7 @@ const GameScreen = () => {
       </View>
 
       {
-        balloonsArray.map(element => element)
+        balloonsArray.map(balloon => balloon)
       }
 
     </View>

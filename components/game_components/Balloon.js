@@ -49,7 +49,7 @@ const Balloon = () => {
     Animated.timing(bottomValue,
       {
         toValue:-700,
-        duration:randomNumbFromInterval(11000,23000),
+        duration:randomNumbFromInterval(10000,23000),
         useNativeDriver: true,
         easing:Easing.linear
       }).start(() => setCanShow(false))
@@ -79,7 +79,7 @@ const Balloon = () => {
 
   if(!canShow) return null
 
-  return (
+  else return (
     <Animated.View
       className='ml-10 absolute -z-10'
       style={{transform:[{translateY:bottomValue},{scale:balloonSize}],marginLeft:randomNumbFromInterval(0,Dimensions.get('window').width-Dimensions.get('window').width/3.1)}}
