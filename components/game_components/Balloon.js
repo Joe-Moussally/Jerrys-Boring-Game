@@ -3,8 +3,12 @@ import React, { useEffect, useRef, useState } from 'react'
 
 //expo audio import
 import { Audio } from 'expo-av'
+import { useDispatch } from 'react-redux'
+import { incrementScore } from '../../redux/slices/scoreSlice'
 
 const Balloon = () => {
+
+  const dispatch = useDispatch()
 
   //pop audios paths object
   let popAudios = {
@@ -51,7 +55,7 @@ const Balloon = () => {
 
   //function that handles increasing the score by one
   const handlePop = () => {
-     //increase score
+    dispatch(incrementScore()) //increase score
     playPopSound() //play a random audio pop sound
   }
 

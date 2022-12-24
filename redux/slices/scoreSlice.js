@@ -8,7 +8,7 @@ export const scoreSlice = createSlice({
   name: 'score',
   initialState,
   reducers: {
-    increment: (state) => {
+    incrementScore: (state) => {
       state.value += 1
     },
     reset: (state) => {
@@ -17,6 +17,6 @@ export const scoreSlice = createSlice({
   },
 })
 
-export const { increment, reset } = scoreSlice.actions
+export const { incrementScore, reset } = scoreSlice.actions
 
 export default scoreSlice.reducer
