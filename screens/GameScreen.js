@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, Alert } from 'react-native'
 import React, { useEffect, useRef, useState } from 'react'
 
 //components imports
@@ -11,9 +11,9 @@ const GameScreen = () => {
 
   let id = 0
 
-  const [balloonsArray,setBalloonsArray] = useState([<Balloon id={id} key={id}/>])
+  let progressWidth = useSelector(state => state.progressWidth.value)
 
-  const [progressWidth,setProgressWidth] = useState('81%')
+  const [balloonsArray,setBalloonsArray] = useState([<Balloon id={id} key={id}/>])
 
   const score = useSelector(state => state.score.value)
 

@@ -43,6 +43,7 @@ const Balloon = () => {
   const [canShow,setCanShow] = useState(true)
 
   const bottomValue = useRef(new Animated.Value(Dimensions.get('window').height)).current  // Initial value for bottom: 0
+  const balloonSize = useRef(new Animated.Value(1)).current // balloon transform scale size
 
   useEffect(() => {
     Animated.timing(bottomValue,
@@ -60,6 +61,20 @@ const Balloon = () => {
     dispatch(incrementScore()) //increase score
     dispatch(resetTimer()) //reset score
     playPopSound() //play a random audio pop sound
+    pop() //pop the balloon and unmount remove component
+  }
+
+  //function to animate the pop animation
+  const pop = () => {
+    Animated.timing(balloonSize,
+      {
+        toValue:0,
+        duration:30,
+        useNativeDriver: true,
+        easing:Easing.linear
+      }).start(() => {
+        console.log('POPPED')
+      })
   }
 
   if(!canShow) return null
@@ -67,7 +82,7 @@ const Balloon = () => {
   return (
     <Animated.View
       className='ml-10 absolute -z-10'
-      style={{transform:[{translateY:bottomValue}],marginLeft:randomNumbFromInterval(0,Dimensions.get('window').width-Dimensions.get('window').width/3.1)}}
+      style={{transform:[{translateY:bottomValue},{scale:balloonSize}],marginLeft:randomNumbFromInterval(0,Dimensions.get('window').width-Dimensions.get('window').width/3.1)}}
     >
     <TouchableWithoutFeedback
      onPress={handlePop}
