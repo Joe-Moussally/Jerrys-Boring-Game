@@ -73,7 +73,7 @@ const Balloon = () => {
         useNativeDriver: true,
         easing:Easing.linear
       }).start(() => {
-        console.log('POPPED')
+        setCanShow(false)
       })
   }
 
