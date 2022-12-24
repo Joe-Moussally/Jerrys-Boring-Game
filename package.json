@@ -17,7 +17,10 @@
     "react": "18.1.0",
     "react-native": "0.70.5",
     "react-native-progress": "^5.0.0",
-    "react-redux": "^8.0.5"
+    "react-redux": "^8.0.5",
+    "expo-sqlite": "~11.0.0",
+    "expo-file-system": "~15.1.1",
+    "expo-asset": "~8.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
