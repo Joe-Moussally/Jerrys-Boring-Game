@@ -4,10 +4,7 @@ import React, { useEffect, useRef, useState } from 'react'
 //expo audio import
 import { Audio } from 'expo-av'
 
-const Balloon = ({
-  id,
-  setScore
-}) => {
+const Balloon = () => {
 
   //pop audios paths object
   let popAudios = {
@@ -54,7 +51,7 @@ const Balloon = ({
 
   //function that handles increasing the score by one
   const handlePop = () => {
-    setScore(score => score+1) //increase score
+     //increase score
     playPopSound() //play a random audio pop sound
   }
 

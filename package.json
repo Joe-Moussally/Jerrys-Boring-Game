@@ -9,13 +9,15 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.1",
     "expo": "~47.0.9",
     "expo-av": "~13.0.2",
     "expo-status-bar": "~1.4.2",
     "nativewind": "^2.0.11",
     "react": "18.1.0",
     "react-native": "0.70.5",
-    "react-native-progress": "^5.0.0"
+    "react-native-progress": "^5.0.0",
+    "react-redux": "^8.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
