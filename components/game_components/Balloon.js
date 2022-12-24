@@ -62,7 +62,7 @@ const Balloon = ({
 
   return (
     <Animated.View
-      className='ml-10 absolute'
+      className='ml-10 absolute -z-10'
       style={{transform:[{translateY:bottomValue}],marginLeft:randomNumbFromInterval(0,Dimensions.get('window').width-Dimensions.get('window').width/3.1)}}
     >
     <TouchableWithoutFeedback
