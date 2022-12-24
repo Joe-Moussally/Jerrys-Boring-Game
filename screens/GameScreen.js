@@ -34,7 +34,13 @@ const GameScreen = () => {
       balloonInterval = randomIntFromInterval(450,1100)
     }
     id = id + 1
-    setBalloonsArray(prev => [...prev,<Balloon id={id} key={id}/>])
+    //10% chance for death balloon to appear
+    if(Math.random() < 0.074) {
+      setBalloonsArray(prev => [...prev,<Balloon id={id} key={id} deathBalloon={true}/>])
+    } else {
+      setBalloonsArray(prev => [...prev,<Balloon id={id} key={id} deathBalloon={false}/>])
+    }
+    
     setTimeout(showBalloon,balloonInterval)
   }
 

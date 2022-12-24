@@ -7,7 +7,9 @@ import { useDispatch } from 'react-redux'
 import { incrementScore } from '../../redux/slices/scoreSlice'
 import { resetTimer } from '../../redux/slices/progressWidthSlice'
 
-const Balloon = () => {
+const Balloon = ({
+  deathBalloon
+}) => {
 
   const dispatch = useDispatch()
 
@@ -49,7 +51,7 @@ const Balloon = () => {
     Animated.timing(bottomValue,
       {
         toValue:-700,
-        duration:randomNumbFromInterval(8600,17500),
+        duration:randomNumbFromInterval(12000,17500),
         useNativeDriver: true,
         easing:Easing.linear
       }).start(() => setCanShow(false))
@@ -62,6 +64,9 @@ const Balloon = () => {
     dispatch(resetTimer()) //reset score
     playPopSound() //play a random audio pop sound
     pop() //pop the balloon and unmount remove component
+    if(deathBalloon) {
+      console.log("GAME OVER")
+    }
   }
 
   //function to animate the pop animation
@@ -90,7 +95,12 @@ const Balloon = () => {
       <Image
         style={{resizeMode:'contain',width:Dimensions.get('window').width/3.2, height:Dimensions.get('window').width/3.2}}
         className={`m-0 p-0`}
-        source={images[Math.floor(Math.random() * images.length)]}
+        source={
+          deathBalloon?
+          require('../../assets/game_assets/death_balloon.png'):
+          images[Math.floor(Math.random() * images.length)]
+        }
+        // source={images[Math.floor(Math.random() * images.length)]}
       />
     </TouchableWithoutFeedback>
     </Animated.View>
