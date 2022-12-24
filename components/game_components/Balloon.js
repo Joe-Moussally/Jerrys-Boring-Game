@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Audio } from 'expo-av'
 import { useDispatch } from 'react-redux'
 import { incrementScore } from '../../redux/slices/scoreSlice'
+import { resetTimer } from '../../redux/slices/progressWidthSlice'
 
 const Balloon = () => {
 
@@ -56,6 +57,7 @@ const Balloon = () => {
   //function that handles increasing the score by one
   const handlePop = () => {
     dispatch(incrementScore()) //increase score
+    dispatch(resetTimer()) //reset score
     playPopSound() //play a random audio pop sound
   }
 
