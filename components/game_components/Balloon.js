@@ -2,7 +2,7 @@ import { Image, TouchableWithoutFeedback, Dimensions, Animated, Easing } from 'r
 import React, { useEffect, useRef, useState } from 'react'
 
 const Balloon = ({
-    color,
+  id,
 }) => {
 
   function randomNumbFromInterval(min, max) { 
@@ -35,14 +35,14 @@ const Balloon = ({
 
   //function that handles increasing the score by one
   const handlePop = () => {
-    console.log(color)
+    console.log(id)
   }
 
   if(!canShow) return null
 
   return (
     <Animated.View
-      className='border-2 border-red-500 ml-10'
+      className='ml-10 absolute'
       style={{transform:[{translateY:bottomValue}],marginLeft:randomNumbFromInterval(0,Dimensions.get('window').width-Dimensions.get('window').width/4)}}
     >
     <TouchableWithoutFeedback
