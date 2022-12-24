@@ -1,13 +1,26 @@
 import { Image, TouchableWithoutFeedback, Dimensions, Animated, Easing } from 'react-native'
 import React, { useEffect, useRef, useState } from 'react'
 
+//expo audio import
+import { Audio } from 'expo-av'
+
 const Balloon = ({
   id,
   setScore
 }) => {
 
-  const playPopSound = () => {
-    
+  //pop audios paths object
+  let popAudios = {
+    1:require("../../assets/game_assets/pop_audio_1.mp3"),
+    2:require("../../assets/game_assets/pop_audio_2.mp3")
+  }
+
+  const playPopSound = async () => {
+    let audioNumber = Math.floor(Math.random() * (2 - 1 + 1) + 1)
+
+    const {sound} = await Audio.Sound.createAsync(popAudios[audioNumber])
+    sound.playAsync()
+    setTimeout(() => sound.unloadAsync(),300)
   }
 
   //function to get random values for the balloon
@@ -41,7 +54,7 @@ const Balloon = ({
 
   //function that handles increasing the score by one
   const handlePop = () => {
-    setScore(score => score+1) //increase score
+    // setScore(score => score+1) //increase score
     playPopSound() //play a random audio pop sound
   }
 
