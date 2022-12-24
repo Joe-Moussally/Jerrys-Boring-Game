@@ -49,7 +49,7 @@ const Balloon = () => {
     Animated.timing(bottomValue,
       {
         toValue:-700,
-        duration:randomNumbFromInterval(11000,18000),
+        duration:randomNumbFromInterval(11000,23000),
         useNativeDriver: true,
         easing:Easing.linear
       }).start(() => setCanShow(false))

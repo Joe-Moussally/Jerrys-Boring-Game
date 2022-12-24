@@ -16,7 +16,7 @@ const Timer = ({
       //decrease timer bar width with time
       setInterval(() => {
         dispatch(decreaseTimer())
-      },900)
+      },1000)
   },[])
 
   return (

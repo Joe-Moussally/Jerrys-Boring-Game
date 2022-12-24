@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import { Alert } from 'react-native'
 
 const initialState = {
-  value: '82%',
+  value: '80%',
 }
 
 export const progressWidthSlice = createSlice({
@@ -13,7 +13,7 @@ export const progressWidthSlice = createSlice({
       state.value = '82%'
     },
     decreaseTimer: (state) => {
-      state.value = state.value.split('%')[0] - .86 +'%'
+      state.value = state.value.split('%')[0] - 1.05 +'%'
     },
   },
 })
