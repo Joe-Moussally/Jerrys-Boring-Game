@@ -27,11 +27,11 @@ const GameScreen = () => {
 
   //function to be called repeatedly for dynamic timers
   const showBalloon = () => {
-    balloonInterval = randomIntFromInterval(800,1900)
+    balloonInterval = randomIntFromInterval(500,1270)
     
     //set higher change for lower intervals
-    if(balloonInterval>1500) {
-      balloonInterval = randomIntFromInterval(1100,1900)
+    if(balloonInterval>1000) {
+      balloonInterval = randomIntFromInterval(450,1100)
     }
     id = id + 1
     setBalloonsArray(prev => [...prev,<Balloon id={id} key={id}/>])

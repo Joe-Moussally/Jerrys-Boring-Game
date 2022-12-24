@@ -59,27 +59,23 @@ export default function App() {
 
   useEffect(() => {
 
-    //if new user -> create the new local db
-    // createTable()
-    // setData()
-    // getData()
-
+    // create user table if it doesn't exist
     db.transaction(tx => {
       tx.executeSql('CREATE TABLE IF NOT EXISTS user (name TEXT, balloons_count INTEGER)')
     })
 
+    //check if user already exists in db
     db.transaction(tx => {
-      tx.executeSql('INSERT INTO user (name, balloons_count) VALUES ("JOE",1000)')
+      // tx.executeSql('TRUNCATE TABLE user')
+      // tx.executeSql('INSERT INTO user (name, balloons_count) VALUES ("JOE",1000)')
     })
 
+    //check if user already exists
     db.transaction(tx => {
-      tx.executeSql('SELECT * FROM user',null,
-        (txObj, res) => {
-          console.log(res.rows)
-        }
-      )
+      tx.executeSql('SELECT * from user',null,(txObj,res) => {
+        console.log(res.rows)
+      })
     })
-
   },[])
 
   return (
