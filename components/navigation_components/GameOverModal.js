@@ -1,7 +1,7 @@
 import { View, Text, Image, Animated, Easing } from 'react-native'
 import React, { useEffect, useRef } from 'react'
 import Button from './Button'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { restartGame } from '../../redux/slices/gameStatusSlice'
 import { reset } from '../../redux/slices/scoreSlice'
 
@@ -10,7 +10,9 @@ const GameOverModal = () => {
   const dispatch = useDispatch()
 
   //function to restart the game
-  const restartGame = () => {
+  const restart = () => {
+
+    console.log("RESTARTED")
 
     //reset score
     dispatch(reset())
@@ -18,6 +20,9 @@ const GameOverModal = () => {
     //reset game status
     dispatch(restartGame())
   }
+
+  //final score
+  const score = useSelector(state => state.score.value)
 
   const scaleSize = useRef(new Animated.Value(0)).current // balloon transform scale size
 
@@ -93,7 +98,7 @@ const GameOverModal = () => {
                   color:'black',
                   paddingTop:6
                 }}
-              >500</Text>
+              >{score}</Text>
           </View>
         </View>
 
@@ -137,7 +142,7 @@ const GameOverModal = () => {
         {/* RETRY BUTTON */}
         <Button
           text="RETRY"
-          onPress={restartGame}
+          onPress={restart}
         />
 
       </View>
