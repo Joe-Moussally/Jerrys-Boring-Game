@@ -27,9 +27,9 @@ const GameOverModal = () => {
     Animated.timing(scaleSize,
       {
         toValue:1,
-        duration:200,
+        duration:500,
         useNativeDriver: true,
-        easing:Easing.linear
+        easing:Easing.elastic(1)
       }).start(() => console.log("GAME OVER ANIMATION"))
   },[scaleSize])
 
