@@ -4,6 +4,7 @@ import Button from './Button'
 import { useDispatch, useSelector } from 'react-redux'
 import { restartGame } from '../../redux/slices/gameStatusSlice'
 import { reset } from '../../redux/slices/scoreSlice'
+import { resetTimer } from '../../redux/slices/progressWidthSlice'
 
 const GameOverModal = () => {
 
@@ -19,6 +20,9 @@ const GameOverModal = () => {
 
     //reset game status
     dispatch(restartGame())
+
+    //reset timer
+    dispatch(resetTimer())
   }
 
   //final score
@@ -35,7 +39,7 @@ const GameOverModal = () => {
         duration:500,
         useNativeDriver: true,
         easing:Easing.elastic(1)
-      }).start(() => console.log("GAME OVER ANIMATION"))
+      }).start(() => {})
   },[scaleSize])
 
   return (

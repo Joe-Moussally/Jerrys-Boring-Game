@@ -2,6 +2,7 @@ import { View, Text, Image, Dimensions } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { decreaseTimer } from '../../redux/slices/progressWidthSlice'
+import { endGame } from '../../redux/slices/gameStatusSlice'
 
 const Timer = ({
 
@@ -18,6 +19,12 @@ const Timer = ({
         dispatch(decreaseTimer())
       },380)
   },[])
+
+  useEffect(() => {
+    if(progressWidth.split('%')[0] < 9) {
+      dispatch(endGame())
+    }
+  },[progressWidth])
 
   return (
     <View className="p-0 items-start w-[50%] relative">

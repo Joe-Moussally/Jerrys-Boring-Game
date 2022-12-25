@@ -41,8 +41,7 @@ const GameScreen = () => {
     id = id + 1
     //10% chance for death balloon to appear
     let isDeathBalloon
-    // Math.random() < 0.04
-    if(true) {
+    if(Math.random() < 0.04) {
       isDeathBalloon = true
     } else {
       isDeathBalloon = false      
