@@ -1,10 +1,45 @@
-import { View, Text, Image } from 'react-native'
-import React from 'react'
+import { View, Text, Image, Animated, Easing } from 'react-native'
+import React, { useEffect, useRef } from 'react'
 import Button from './Button'
+import { useDispatch } from 'react-redux'
+import { restartGame } from '../../redux/slices/gameStatusSlice'
+import { reset } from '../../redux/slices/scoreSlice'
 
 const GameOverModal = () => {
+
+  const dispatch = useDispatch()
+
+  //function to restart the game
+  const restartGame = () => {
+
+    //reset score
+    dispatch(reset())
+
+    //reset game status
+    dispatch(restartGame())
+  }
+
+  const scaleSize = useRef(new Animated.Value(0)).current // balloon transform scale size
+
+
+  useEffect(() => {
+    //pop in animation
+    Animated.timing(scaleSize,
+      {
+        toValue:1,
+        duration:200,
+        useNativeDriver: true,
+        easing:Easing.linear
+      }).start(() => console.log("GAME OVER ANIMATION"))
+  },[scaleSize])
+
   return (
-    <View className="absolute self-center rounded-sm border-4 border-gray-800 top-[15%] w-fit">
+    <Animated.View
+      className="absolute self-center rounded-sm border-4 border-gray-800 top-[15%] w-fit"
+      style={{
+        transform:[{scale:scaleSize}]
+      }}
+    >
       <Text
         style={{
           color:'black',
@@ -102,11 +137,11 @@ const GameOverModal = () => {
         {/* RETRY BUTTON */}
         <Button
           text="RETRY"
-          onPress={() => console.log("PRESSED")}
+          onPress={restartGame}
         />
 
       </View>
-    </View>
+    </Animated.View>
   )
 }
 

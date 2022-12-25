@@ -71,6 +71,8 @@ const Balloon = ({
     
     //if wrong balloon popped -> end the game
     if(deathBalloon) {
+      playPopSound()
+      pop()
       dispatch(endGame())
       return
     }
@@ -111,7 +113,6 @@ const Balloon = ({
           require('../../assets/game_assets/death_balloon.png'):
           images[Math.floor(Math.random() * images.length)]
         }
-        // source={images[Math.floor(Math.random() * images.length)]}
       />
     </TouchableWithoutFeedback>
     </Animated.View>
