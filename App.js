@@ -61,6 +61,7 @@ export default function App() {
 
         {/* Gameplay Component */}
         <GameScreen />
+        
       </View>
     </Provider>
   );

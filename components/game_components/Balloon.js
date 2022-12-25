@@ -3,15 +3,18 @@ import React, { useEffect, useRef, useState } from 'react'
 
 //expo audio import
 import { Audio } from 'expo-av'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { incrementScore } from '../../redux/slices/scoreSlice'
 import { resetTimer } from '../../redux/slices/progressWidthSlice'
+import { endGame } from '../../redux/slices/gameStatusSlice'
 
 const Balloon = ({
-  deathBalloon
+  deathBalloon,
 }) => {
 
   const dispatch = useDispatch()
+
+  const gameEnded = useSelector(state => state.gameStatus.gameEnded)
 
   //pop audios paths object
   let popAudios = {
@@ -60,13 +63,21 @@ const Balloon = ({
 
   //function that handles increasing the score by one
   const handlePop = () => {
+
+    // if game ended no poping can be done
+    if(gameEnded) {
+      return
+    }
+    
+    //if wrong balloon popped -> end the game
+    if(deathBalloon) {
+      dispatch(endGame())
+      return
+    }
     dispatch(incrementScore()) //increase score
     dispatch(resetTimer()) //reset score
     playPopSound() //play a random audio pop sound
     pop() //pop the balloon and unmount remove component
-    if(deathBalloon) {
-      console.log("GAME OVER")
-    }
   }
 
   //function to animate the pop animation

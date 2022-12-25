@@ -6,7 +6,7 @@ const initialState = {
 }
 
 export const progressWidthSlice = createSlice({
-  name: 'score',
+  name: 'progress',
   initialState,
   reducers: {
     resetTimer: (state) => {

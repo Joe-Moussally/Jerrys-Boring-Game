@@ -9,7 +9,7 @@ const Button = ({
     <TouchableOpacity
         onPress={onPress}
     >
-        <View className="rounded-lg border-2 border-gray-900 justify-center items-center bg-lime-700">
+        <View className="rounded-lg border-2 border-gray-900 justify-center items-center bg-lime-500">
             <Text
                 style={{
                     fontFamily:'comic',
