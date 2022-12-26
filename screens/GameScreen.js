@@ -8,15 +8,14 @@ import Timer from '../components/game_components/Timer'
 import GameOverModal from '../components/navigation_components/GameOverModal'
 
 //redux imports
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { endTimer, startTimer } from '../redux/slices/gameStatusSlice'
 
 const GameScreen = () => {
 
-  let id = 0
+  const dispatch = useDispatch()
 
-  //timer states
-  const [timer,setTimer] = useState(0)
-  const [startTime,setStartTime] = useState(null)
+  let id = 0
 
   let progressWidth = useSelector(state => state.progressWidth.value)
 
@@ -57,21 +56,15 @@ const GameScreen = () => {
   }
 
   useEffect(() => {
+    dispatch(startTimer())
     setTimeout(showBalloon,balloonInterval)
-    setStartTime(Date.now())
   },[])
 
   useEffect(() => {
-
-    if(!gameEnded) {//start timer
-      setBalloonsArray([<Balloon id={id} key={id}/>])
-      setStartTime(Date.now())
+    if(!gameEnded) { // if game started
+      console.log("TIME STARTED")
+      dispatch(startTimer()) //start timer
     }
-    if(gameEnded) { // if game ended -> end timer
-      setTimer(Date.now() - startTime)
-      setStartTime(0) //reset start time
-    }
-
   },[gameEnded])
 
   return (
@@ -93,7 +86,7 @@ const GameScreen = () => {
       
       {
         gameEnded?
-        <GameOverModal time={timer}/>:null
+        <GameOverModal />:null
       }
 
     </View>

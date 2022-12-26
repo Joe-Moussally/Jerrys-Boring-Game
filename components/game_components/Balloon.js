@@ -6,7 +6,7 @@ import { Audio } from 'expo-av'
 import { useDispatch, useSelector } from 'react-redux'
 import { incrementScore } from '../../redux/slices/scoreSlice'
 import { resetTimer } from '../../redux/slices/progressWidthSlice'
-import { endGame } from '../../redux/slices/gameStatusSlice'
+import { endGame, endTimer } from '../../redux/slices/gameStatusSlice'
 
 const Balloon = ({
   deathBalloon,
@@ -73,6 +73,7 @@ const Balloon = ({
     if(deathBalloon) {
       playPopSound()
       pop()
+      dispatch(endTimer())
       dispatch(endGame())
       return
     }

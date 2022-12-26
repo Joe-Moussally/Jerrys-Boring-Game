@@ -2,13 +2,13 @@ import { View, Text, Image, Animated, Easing } from 'react-native'
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import Button from './Button'
 import { useDispatch, useSelector } from 'react-redux'
-import { restartGame } from '../../redux/slices/gameStatusSlice'
+import { endTimer, restartGame } from '../../redux/slices/gameStatusSlice'
 import { reset } from '../../redux/slices/scoreSlice'
 import { resetTimer } from '../../redux/slices/progressWidthSlice'
 
-const GameOverModal = ({
-  time // in ms
-}) => {
+const GameOverModal = () => {
+
+  const time = useSelector(state => state.gameStatus.timer)
 
   const [seconds,setSeconds] = useState(0)
   const [minutes,setMinutes] = useState(0)
@@ -18,7 +18,7 @@ const GameOverModal = ({
 
   //function to restart the game
   const restart = () => {
-
+ 
     //reset score
     dispatch(reset())
 
@@ -34,9 +34,9 @@ const GameOverModal = ({
 
   const scaleSize = useRef(new Animated.Value(0)).current // balloon transform scale size
 
-
-  //calculate the time before displaying the modal
-  useLayoutEffect(() => {
+  useEffect(() => {
+    dispatch(endTimer())
+    console.log("TIME OVER",time)
     //calcute seconds, minutes, hours
     setSeconds(Math.floor(time/1000))
     setMinutes(Math.floor(seconds/60))

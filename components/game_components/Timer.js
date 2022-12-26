@@ -2,7 +2,7 @@ import { View, Text, Image, Dimensions } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { decreaseTimer } from '../../redux/slices/progressWidthSlice'
-import { endGame } from '../../redux/slices/gameStatusSlice'
+import { endGame, endTimer } from '../../redux/slices/gameStatusSlice'
 
 const Timer = ({
 
@@ -22,6 +22,7 @@ const Timer = ({
 
   useEffect(() => {
     if(progressWidth.split('%')[0] < 9) {
+      dispatch(endTimer())
       dispatch(endGame())
     }
   },[progressWidth])
