@@ -15,7 +15,7 @@ const GameScreen = () => {
   let id = 0
 
   //timer states
-  let timer = 0
+  const [timer,setTimer] = useState(0)
   const [startTime,setStartTime] = useState(null)
 
   let progressWidth = useSelector(state => state.progressWidth.value)
@@ -62,15 +62,13 @@ const GameScreen = () => {
   },[])
 
   useEffect(() => {
-    console.log(gameEnded)
 
     if(!gameEnded) {//start timer
       setBalloonsArray([<Balloon id={id} key={id}/>])
       setStartTime(Date.now())
     }
     if(gameEnded) { // if game ended -> end timer
-      timer = (Date.now() - startTime)
-
+      setTimer(Date.now() - startTime)
       setStartTime(0) //reset start time
     }
 
@@ -95,7 +93,7 @@ const GameScreen = () => {
       
       {
         gameEnded?
-        <GameOverModal />:null
+        <GameOverModal time={timer}/>:null
       }
 
     </View>
