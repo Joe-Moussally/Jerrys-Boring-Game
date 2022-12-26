@@ -20,9 +20,8 @@ export const gameStatusSlice = createSlice({
       state.timer = Date.now()
     },
     endTimer: (state) => {
-      console.log("BEFORE",state.timer)
       state.timer = Date.now() - state.timer
-      console.log("AFTER",state.timer)
+
     },
   },
 })

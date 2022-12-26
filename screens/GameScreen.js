@@ -19,7 +19,7 @@ const GameScreen = () => {
 
   let progressWidth = useSelector(state => state.progressWidth.value)
 
-  const [balloonsArray,setBalloonsArray] = useState([<Balloon id={id} key={id}/>])
+  const [balloonsArray,setBalloonsArray] = useState([])
 
   const score = useSelector(state => state.score.value)
 
@@ -62,7 +62,7 @@ const GameScreen = () => {
 
   useEffect(() => {
     if(!gameEnded) { // if game started
-      console.log("TIME STARTED")
+      setBalloonsArray([<Balloon id={id} key={id}/>])
       dispatch(startTimer()) //start timer
     }
   },[gameEnded])

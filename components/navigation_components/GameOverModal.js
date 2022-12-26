@@ -35,8 +35,6 @@ const GameOverModal = () => {
   const scaleSize = useRef(new Animated.Value(0)).current // balloon transform scale size
 
   useEffect(() => {
-    dispatch(endTimer())
-    console.log("TIME OVER",time)
     //calcute seconds, minutes, hours
     setSeconds(Math.floor(time/1000))
     setMinutes(Math.floor(seconds/60))

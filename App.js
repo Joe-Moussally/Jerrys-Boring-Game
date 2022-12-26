@@ -44,7 +44,6 @@ export default function App() {
     //check if user already exists
     db.transaction(tx => {
       tx.executeSql('SELECT * from user',null,(txObj,res) => {
-        console.log(res.rows)
       })
     })
   },[])
