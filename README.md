@@ -2,16 +2,25 @@
 
 ## About
 
-Rick And Morty: Jerry's Game is the balloon-popping game that Jerry gets addicted to during one of the episodes of the hilarious animated series Rick and Morty. The game is just as you see it in the episode: a crude simulator where you pop the balloons that appear on the screen.
+From Adult Swim's Rick and Morty comes Jerry's Game, the pinnacle of mobile gaming! Step into the shoes of Morty's Dad, Jerry Smith, and invest your free time in our balloon-popping simulator for accomplished, respected individuals. Need encouragement for performing infant-level motor functions? Do you wish bubble wrap came with achievements? Jerry's Game has all of this and more! Get in there and get poppin'!
+
+- Pop the balloons!
+- Keep popping the balloons!
+- Never stop popping the balloons
+- A new way get bored, fast.
+- Infinite Replayability
+
 
 - [Watch Episode Scene Here](https://www.youtube.com/watch?v=yR1aZZOT3wI)
 
 Gameplay in Rick And Morty: Jerry's Game is so repetitive to the point of absurdity. This game is simply a parody of the genre, so its gameplay is identical to the games it's making fun of.
 
-Rick And Morty: Jerry's Game is a strange game, because although it's not fun in and of itself, it should be a lot of fun for any fan of Rick and Morty, especially whenever the pair shows up to congratulate you.
-
 
 ## Description
+
+Rick And Morty: Jerry's Game is the balloon-popping game that Jerry gets addicted to during one of the episodes of the hilarious animated series Rick and Morty. The game is just as you see it in the episode: a crude simulator where you pop the balloons that appear on the screen.
+
+It's a strange game, because although it's not fun in and of itself, it should be a lot of fun for any fan of Rick and Morty, especially whenever the pair shows up to congratulate you.
 
 When you start playing Rick And Morty: Jerry's Game, you have absolutely nothing: no music, no variety of balloons, no changes in scenery, no way to leave the game halfway, nothing.
 
@@ -19,13 +28,7 @@ When you start playing Rick And Morty: Jerry's Game, you have absolutely nothing
     <img src="./assets/readme/image 1.png" width="250px"/>
 </p>
 
-From Adult Swim's Rick and Morty comes Jerry's Game, the pinnacle of mobile gaming! Step into the shoes of Morty's Dad, Jerry Smith, and invest your free time in our balloon-popping simulator for accomplished, respected individuals. Need encouragement for performing infant-level motor functions? Do you wish bubble wrap came with achievements? Jerry's Game has all of this and more! Get in there and get poppin'!
 
-- Pop the balloons!
-- Keep popping the balloons!
-- Never stop popping the balloons
-- Unlock new skins and features
-- Infinite Replayability
 
 ## Tech Stacks
 
