@@ -13,7 +13,7 @@ From Adult Swim's Rick and Morty comes Jerry's Game, the pinnacle of mobile gami
 
 -> [Watch Episode Scene Here](https://www.youtube.com/watch?v=yR1aZZOT3wI)
 
-Gameplay in Rick And Morty: Jerry's Game is so repetitive to the point of absurdity. This game is simply a parody of the genre, so its gameplay is identical to the games it's making fun of.
+Gameplay in Rick And Morty: Jerry's Game is so repetitive to the point of absurdity. This game is simply a parody of the genre, so its gameplay is identical to the games it's making fun of. You have absolutely nothing: no music, no variety of balloons, no changes in scenery, no way to leave the game halfway, nothing.
 
 
 ## Description
@@ -22,7 +22,7 @@ Rick And Morty: Jerry's Game is the balloon-popping game that Jerry gets addicte
 
 It's a strange game, because although it's not fun in and of itself, it should be a lot of fun for any fan of Rick and Morty, especially whenever the pair shows up to congratulate you.
 
-When you start playing Rick And Morty: Jerry's Game, you have absolutely nothing: no music, no variety of balloons, no changes in scenery, no way to leave the game halfway, nothing.
+As mentioned before, when you start playing Rick And Morty: Jerry's Game, you have absolutely nothing: no music, no variety of balloons, no changes in scenery, no way to leave the game halfway, nothing.
 
 <p>
     <img src="./assets/readme/image 1.png" width="250px"/>
