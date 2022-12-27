@@ -1,5 +1,5 @@
 //screens imports
-import { View,StatusBar } from 'react-native';
+import { View,StatusBar, Platform } from 'react-native';
 import GameScreen from './screens/GameScreen';
 
 //redux imports
@@ -53,7 +53,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <View
-        style={{marginTop:StatusBar.currentHeight, flex:1}}
+        style={{marginTop:(Platform.OS == 'ios')?40:StatusBar.currentHeight, flex:1}}// StatusBar.currentHeight
       >
 
         {/* <StatusBar translucent={true}/> */}
