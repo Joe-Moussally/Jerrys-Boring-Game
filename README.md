@@ -11,7 +11,7 @@ From Adult Swim's Rick and Morty comes Jerry's Game, the pinnacle of mobile gami
 - Infinite Replayability
 
 
-- [Watch Episode Scene Here](https://www.youtube.com/watch?v=yR1aZZOT3wI)
+-> [Watch Episode Scene Here](https://www.youtube.com/watch?v=yR1aZZOT3wI)
 
 Gameplay in Rick And Morty: Jerry's Game is so repetitive to the point of absurdity. This game is simply a parody of the genre, so its gameplay is identical to the games it's making fun of.
 
